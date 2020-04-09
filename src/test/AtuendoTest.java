@@ -7,6 +7,7 @@ import org.junit.Test;
 
 //import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
 
 
 public class AtuendoTest {
@@ -36,8 +37,24 @@ public class AtuendoTest {
 
         atuendo.agregarPrenda(sueter);
 
+        assertEquals(  atuendo.getCategoria("zapatos"), Categoria.CALZADO     );
 
+    }
+
+    @Test
+    public void testPrendaDeberiaFallar(){
+
+        Prenda zapatos = new Prenda("zapatos", Categoria.CALZADO   );
+
+        Atuendo atuendo = new Atuendo();
+
+        atuendo.agregarPrenda(zapatos);
+
+        assertNotEquals(  atuendo.getCategoria("zapatos"), Categoria.SUPERIOR     );
 
 
     }
+
+
+
 }

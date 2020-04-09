@@ -29,12 +29,20 @@ public class Atuendo {
 
     public void agregarPrenda( Prenda prendaNueva){
 
-        //prendas.add(prendaNueva);
-
         prendas.put(prendaNueva.getTipoPrenda(), prendaNueva.getCategoria() );
 
     }
 
+    public Map<String, Categoria> getPrendas() {
+        return prendas;
+    }
+
+    public Categoria getCategoria(String string ){
+
+        return this.prendas.get(string);
+
+
+    }
 
 
 }
