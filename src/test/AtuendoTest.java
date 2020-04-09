@@ -17,7 +17,11 @@ public class AtuendoTest {
 
         Atuendo atuendo = new Atuendo();
 
-        assertEquals(10,10);
+        Prenda sueter = new Prenda( "sueter",Categoria.SUPERIOR );
+
+        atuendo.agregarPrenda(sueter);
+
+        assertEquals(atuendo.getCategoria("sueter"),Categoria.SUPERIOR);
     }
 
 
@@ -26,13 +30,13 @@ public class AtuendoTest {
 
         Prenda zapatos = new Prenda("zapatos", Categoria.CALZADO   );
 
-        Prenda sueter = new Prenda( "sueter",Categoria.SUPERIOR );
+
 
         Atuendo atuendo = new Atuendo();
 
         atuendo.agregarPrenda(zapatos);
 
-        atuendo.agregarPrenda(sueter);
+
 
         assertEquals(  atuendo.getCategoria("zapatos"), Categoria.CALZADO     );
 
@@ -48,6 +52,21 @@ public class AtuendoTest {
         atuendo.agregarPrenda(zapatos);
 
         assertNotEquals(  atuendo.getCategoria("zapatos"), Categoria.SUPERIOR     );
+
+
+    }
+
+    @Test
+    public void testCalzado(){
+
+        Prenda calzado = new Prenda( "anteojos", Categoria.ACCESORIOS);
+
+        Atuendo atuendo = new Atuendo();
+
+        atuendo.agregarPrenda(calzado);
+
+        assertEquals(atuendo.getCategoria("anteojos"), Categoria.ACCESORIOS);
+
 
 
     }

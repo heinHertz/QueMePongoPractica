@@ -6,6 +6,8 @@ public class Prenda {
 
     Categoria categoria;
 
+    Material material;
+
     public Prenda( String tipoPrenda, Categoria categoria){
 
         this.tipoPrenda = tipoPrenda;
