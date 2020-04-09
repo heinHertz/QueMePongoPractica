@@ -15,12 +15,9 @@ public class AtuendoTest {
     @Test
     public void testAtuendo() {
 
-
         Atuendo atuendo = new Atuendo();
 
         assertEquals(10,10);
-
-
     }
 
 
