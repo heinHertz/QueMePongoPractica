@@ -8,6 +8,8 @@ public class Prenda {
 
     Material material;
 
+    Color colorPrincipal;
+
     public Prenda( String tipoPrenda, Categoria categoria){
 
         this.tipoPrenda = tipoPrenda;
@@ -16,7 +18,6 @@ public class Prenda {
 
     }
 
-
     public String getTipoPrenda() {
         return tipoPrenda;
     }
@@ -24,4 +25,26 @@ public class Prenda {
     public Categoria getCategoria() {
         return categoria;
     }
+
+
+    public void setMaterial(Material material){
+
+        this.material = material;
+
+    }
+
+    public void setColor(Color colorPrincipal) {
+        this.colorPrincipal = colorPrincipal;
+    }
+
+    public Color getColorPrincipal() {
+        return colorPrincipal;
+    }
+
+    public Material getMaterial() {
+        return material;
+    }
 }
+
+
+
