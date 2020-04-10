@@ -14,14 +14,7 @@ public class PrendaTest {
 
         prenda.setMaterial(new Material("denim"));
 
-        
-
-
-
     }
-
-
-
 
 
 }

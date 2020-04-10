@@ -1,5 +1,7 @@
 package main.java;
 
+import main.java.utiles.ColorException;
+
 public class Prenda {
 
     String tipoPrenda;
@@ -9,6 +11,8 @@ public class Prenda {
     Material material;
 
     Color colorPrincipal;
+
+    Color colorSecundario;
 
     public Prenda( String tipoPrenda, Categoria categoria){
 
@@ -44,6 +48,19 @@ public class Prenda {
     public Material getMaterial() {
         return material;
     }
+
+    public Color getColorSecundario() {
+        if(this.colorSecundario.equals(null) )
+            throw new ColorException("Color NUll, debe asignar Un Color Secundario");
+        else
+            return colorSecundario;
+    }
+
+    public void setColorSecundario(Color colorSecundario) {
+        this.colorSecundario = colorSecundario;
+    }
+
+
 }
 
 
