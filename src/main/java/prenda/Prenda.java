@@ -1,6 +1,10 @@
 package main.java.prenda;
 
+import main.java.utiles.CategoriaException;
 import main.java.utiles.ColorException;
+import main.java.utiles.MaterialException;
+
+import java.util.Objects;
 
 public class Prenda {
 
@@ -10,23 +14,56 @@ public class Prenda {
 
     Material material;
 
-    Color colorPrincipal;
+    Color colorPrimario;
 
     Color colorSecundario;
 
-    public Prenda( String tipoPrenda, Categoria categoria, Material material, Color colorPrincipal, Color colorSecundario){
+    public Prenda( String tipoPrenda, Categoria categoria, Material material, Color colorPrimario, Color colorSecundario){
 
         this.tipoPrenda = tipoPrenda;
 
         this.categoria = categoria;
 
-        this.material = material;
+        this.setMaterial(material);
 
-        this.setColorPrincipal( colorPrincipal);
+        this.setColorPrimario( colorPrimario);
 
         this.colorSecundario = colorSecundario;
 
 
+    }
+
+    public void setTipoPrenda(Categoria categoria) {
+        if(categoria.equals(null))
+            throw new CategoriaException("Categoria NUll, debe asignar Una Categoria correcta");
+        else
+            this.categoria = categoria;
+    }
+
+    public void setCategoria(Categoria categoria) {
+        if(categoria.equals(null))
+            throw new CategoriaException("Categoria NUll, debe asignar Una Categoria correcta");
+       else
+           this.categoria = categoria;
+    }
+
+    public void setMaterial(Material material ) {
+        if(material.equals(null) )
+            throw new MaterialException("Material NUll, debe asignar Un Material Correcto");
+        else
+            this.material = material;
+    }
+
+
+    public void setColorPrimario(Color colorPrimario) {
+        if(colorPrimario.equals(null) )
+            throw new ColorException("Color NUll, debe asignar Un Color Primario");
+        else
+             this.colorPrimario = colorPrimario;
+    }
+
+    public void setColorSecundario(Color colorSecundario) {
+        this.colorSecundario = colorSecundario;
     }
 
     public String getTipoPrenda() {
@@ -38,14 +75,10 @@ public class Prenda {
     }
 
 
-    public void setMaterial(Material material){
 
-        this.material = material;
 
-    }
-
-    public Color getColorPrincipal() {
-        return this.colorPrincipal;
+    public Color getColorPrimario() {
+        return this.colorPrimario;
     }
 
     public Color getColorSecundario() {
@@ -56,19 +89,19 @@ public class Prenda {
         return material;
     }
 
-    public void setColorPrincipal(Color colorPrincipal) {
-        if(colorPrincipal.equals(null) )
-            throw new ColorException("Color NUll, debe asignar Un Color Primario");
-        else
-             this.colorPrincipal = colorPrincipal;
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Prenda)) return false;
+        Prenda prenda = (Prenda) o;
+        return  tipoPrenda.equals(prenda.tipoPrenda) &&
+                colorPrimario.equals(prenda.colorPrimario) &&
+                Objects.equals(colorSecundario, prenda.colorSecundario) &&
+                material == prenda.material;
     }
 
 
 
-
-    public void setColorSecundario(Color colorSecundario) {
-        this.colorSecundario = colorSecundario;
-    }
 
 
 }

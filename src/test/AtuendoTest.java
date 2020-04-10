@@ -23,6 +23,7 @@ public class AtuendoTest {
 
         atuendo.agregarPrenda(sueter);
 
+
         assertEquals(atuendo.getCategoria("sueter"),Categoria.SUPERIOR);
     }
 
@@ -30,9 +31,10 @@ public class AtuendoTest {
     @Test
     public void testPrenda(){
 
-        Prenda zapatos = new Prenda( "zapatos", Categoria.CALZADO, Material.PLASTICO, Color.NEGRO, null    );
-
         Atuendo atuendo = new Atuendo();
+
+
+        Prenda zapatos = new Prenda( "zapatos", Categoria.CALZADO, Material.PLASTICO, Color.NEGRO, null    );
 
         atuendo.agregarPrenda(zapatos);
 

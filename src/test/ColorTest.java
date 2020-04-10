@@ -38,7 +38,7 @@ public class ColorTest {
 
         Prenda pantalon = new Prenda( "pantalon", Categoria.INFERIOR, Material.POLIESTER, null, Color.BLANCO    );
 
-        assertEquals( pantalon.getColorPrincipal(), Color.AMARILLO);
+        assertEquals( pantalon.getColorPrimario(), Color.AMARILLO);
 
     }
 
