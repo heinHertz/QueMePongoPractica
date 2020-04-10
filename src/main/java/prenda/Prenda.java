@@ -33,8 +33,8 @@ public class Prenda {
 
     }
 
-    public void setTipoPrenda(Categoria categoria) {
-        if(categoria.equals(null))
+    public void setTipoPrenda(TipoPrenda tipoPrenda) {
+        if(tipoPrenda.equals(null))
             throw new CategoriaException("Categoria NUll, debe asignar Una Categoria correcta");
         else
             this.categoria = categoria;
@@ -74,9 +74,6 @@ public class Prenda {
         return categoria;
     }
 
-
-
-
     public Color getColorPrimario() {
         return this.colorPrimario;
     }
@@ -86,9 +83,11 @@ public class Prenda {
     }
 
     public Material getMaterial() {
+
         return material;
     }
 
+    // ESTO SIRVE SI AL COMPARAR DOS OBJETOS PRENDA , SON IGUALES SI TIENEN LAS MISMAS ATRIBUTOS CON LOS MISMOS VALORES
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

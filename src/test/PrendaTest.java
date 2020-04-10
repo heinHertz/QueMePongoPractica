@@ -16,17 +16,20 @@ public class PrendaTest {
 
         Prenda pantalon = new Prenda( "pantalon", Categoria.INFERIOR, Material.POLIESTER, Color.NEGRO,Color.BLANCO    );
 
-        Prenda pantalon2 = new Prenda( "pantalon", Categoria.INFERIOR, Material.POLIESTER, Color.NEGRO,Color.BLANCO    );
-
-        Prenda sueter = new Prenda( "sueter",Categoria.SUPERIOR, Material.LANA, Color.AMARILLO, Color.ROJO );
-
-        //   assertEquals( pantalon.getColorPrincipal(), Color.NEGRO);
-
-
+        Prenda pantalon2 = new Prenda( "pantalon", Categoria.INFERIOR, Material.POLIESTER, Color.NEGRO,Color.BLANCO);
 
         assertEquals(  pantalon.equals( pantalon2) ,true );
     }
 
+    @Test
+    public void testPrendaColorPrincipalDiferentes(){
+
+        Prenda pantalon = new Prenda( "pantalon", Categoria.INFERIOR, Material.POLIESTER, Color.NEGRO,Color.BLANCO    );
+
+        Prenda pantalon2 = new Prenda( "pantalon", Categoria.INFERIOR, Material.POLIESTER, Color.AMARILLO,Color.BLANCO);
+
+        assertNotEquals(  pantalon.equals( pantalon2) ,true );
+    }
     @Test
     public void testPrendaDistintosDeberiaFallar(){
 
