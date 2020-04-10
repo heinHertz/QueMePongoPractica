@@ -2,6 +2,8 @@ package test;
 
 import main.java.atuendo.Atuendo;
 import main.java.Categoria;
+import main.java.prenda.Color;
+import main.java.prenda.Material;
 import main.java.prenda.Prenda;
 import org.junit.Test;
 
@@ -17,7 +19,7 @@ public class AtuendoTest {
 
         Atuendo atuendo = new Atuendo();
 
-        Prenda sueter = new Prenda( "sueter",Categoria.SUPERIOR );
+        Prenda sueter = new Prenda( "sueter",Categoria.SUPERIOR, Material.LANA, Color.AMARILLO, Color.ROJO );
 
         atuendo.agregarPrenda(sueter);
 
@@ -28,14 +30,11 @@ public class AtuendoTest {
     @Test
     public void testPrenda(){
 
-        Prenda zapatos = new Prenda("zapatos", Categoria.CALZADO   );
-
-
+        Prenda zapatos = new Prenda( "zapatos", Categoria.CALZADO, Material.PLASTICO, Color.NEGRO, null    );
 
         Atuendo atuendo = new Atuendo();
 
         atuendo.agregarPrenda(zapatos);
-
 
 
         assertEquals(  atuendo.getCategoria("zapatos"), Categoria.CALZADO     );
@@ -43,9 +42,9 @@ public class AtuendoTest {
     }
 
     @Test
-    public void testPrendaDeberiaFallar(){
+    public void testZapatosDeberiaFallar(){
 
-        Prenda zapatos = new Prenda("zapatos", Categoria.CALZADO   );
+        Prenda zapatos = new Prenda( "zapatos", Categoria.CALZADO, Material.PLASTICO, Color.NEGRO, null    );
 
         Atuendo atuendo = new Atuendo();
 
@@ -59,13 +58,14 @@ public class AtuendoTest {
     @Test
     public void testCalzado(){
 
-        Prenda calzado = new Prenda( "anteojos", Categoria.ACCESORIOS);
+
+        Prenda calzado = new Prenda( "zapatillas", Categoria.ACCESORIOS, Material.PLASTICO, Color.NEGRO, Color.BLANCO);
 
         Atuendo atuendo = new Atuendo();
 
         atuendo.agregarPrenda(calzado);
 
-        assertEquals(atuendo.getCategoria("anteojos"), Categoria.ACCESORIOS);
+        assertEquals(atuendo.getCategoria("zapatillas"), Categoria.ACCESORIOS);
 
 
 

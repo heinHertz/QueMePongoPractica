@@ -6,6 +6,7 @@ public enum Material {
     LANA,
     PLASTICO,
     SEDA,
+    POLIESTER,
     DENIM,
     ALGODON;
 

@@ -13,27 +13,32 @@ public class ColorTest {
     @Test
     public void colorSecundarioTest(){
 
-        Prenda prenda = new Prenda( "pantalon", Categoria.INFERIOR );
+        Prenda pantalon = new Prenda( "pantalon", Categoria.INFERIOR, Material.POLIESTER, Color.NEGRO,Color.BLANCO    );
 
-        prenda.setMaterial( Material.ALGODON);
-
-        prenda.setColorSecundario(Color.AMARILLO);
-
-        assertEquals( prenda.getColorSecundario(), Color.AMARILLO);
+        assertEquals( pantalon.getColorSecundario(), Color.BLANCO);
 
     }
 
-    // este Test espera una Excepcion de Tipo Runtime
+    @Test
+    public void colorSecundarioTest2(){
+
+        Prenda pantalon = new Prenda( "pantalon", Categoria.INFERIOR, Material.POLIESTER, Color.NEGRO, null    );
+
+        assertEquals( pantalon.getColorSecundario(), null);
+
+    }
+
+
+
+    // este Test espera una Excepcion de Tipo Runtime en caso de que no tenga color principal asignado salta la Exception
 
     @Test(expected = RuntimeException.class)
 
-    public void tieneColorSecundarioNull() throws RuntimeException {
+    public void tieneColorPrimarioiNull() throws RuntimeException {
 
-        Prenda prenda = new Prenda( "pantalon", Categoria.INFERIOR );
+        Prenda pantalon = new Prenda( "pantalon", Categoria.INFERIOR, Material.POLIESTER, null, Color.BLANCO    );
 
-
-
-        assertEquals( prenda.getColorSecundario(), Color.AMARILLO);
+        assertEquals( pantalon.getColorPrincipal(), Color.AMARILLO);
 
     }
 
