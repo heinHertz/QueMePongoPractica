@@ -1,12 +1,10 @@
 package test;
 
 import main.java.Categoria;
-import main.java.Color;
-import main.java.Material;
-import main.java.Prenda;
+import main.java.prenda.Color;
+import main.java.prenda.Material;
+import main.java.prenda.Prenda;
 import org.junit.Test;
-
-import java.io.IOException;
 
 import static org.junit.Assert.assertEquals;
 
@@ -17,7 +15,7 @@ public class ColorTest {
 
         Prenda prenda = new Prenda( "pantalon", Categoria.INFERIOR );
 
-        prenda.setMaterial(new Material("denim"));
+        prenda.setMaterial( Material.ALGODON);
 
         prenda.setColorSecundario(Color.AMARILLO);
 
@@ -25,7 +23,7 @@ public class ColorTest {
 
     }
 
-    // este Test espera un Excepcion de Tipo Runtime
+    // este Test espera una Excepcion de Tipo Runtime
 
     @Test(expected = RuntimeException.class)
 
@@ -33,7 +31,7 @@ public class ColorTest {
 
         Prenda prenda = new Prenda( "pantalon", Categoria.INFERIOR );
 
-     
+
 
         assertEquals( prenda.getColorSecundario(), Color.AMARILLO);
 

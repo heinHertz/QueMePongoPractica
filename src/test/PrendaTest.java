@@ -1,8 +1,8 @@
 package test;
 
 import main.java.Categoria;
-import main.java.Material;
-import main.java.Prenda;
+import main.java.prenda.Material;
+import main.java.prenda.Prenda;
 import org.junit.Test;
 
 public class PrendaTest {
@@ -12,7 +12,7 @@ public class PrendaTest {
 
         Prenda prenda = new Prenda( "pantalon", Categoria.INFERIOR );
 
-        prenda.setMaterial(new Material("denim"));
+        prenda.setMaterial(Material.DENIM);
 
     }
 

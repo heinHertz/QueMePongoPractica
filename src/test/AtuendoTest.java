@@ -1,8 +1,8 @@
 package test;
 
-import main.java.Atuendo;
+import main.java.prenda.Atuendo;
 import main.java.Categoria;
-import main.java.Prenda;
+import main.java.prenda.Prenda;
 import org.junit.Test;
 
 //import static org.junit.jupiter.api.Assertions.*;

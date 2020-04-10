@@ -1,7 +1,8 @@
-package main.java;
+package main.java.prenda;
+
+import main.java.Categoria;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 public class Atuendo {
