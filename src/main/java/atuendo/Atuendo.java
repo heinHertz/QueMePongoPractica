@@ -1,6 +1,7 @@
-package main.java.prenda;
+package main.java.atuendo;
 
 import main.java.Categoria;
+import main.java.prenda.Prenda;
 
 import java.util.HashMap;
 import java.util.Map;

@@ -1,6 +1,6 @@
 package test;
 
-import main.java.prenda.Atuendo;
+import main.java.atuendo.Atuendo;
 import main.java.Categoria;
 import main.java.prenda.Prenda;
 import org.junit.Test;
