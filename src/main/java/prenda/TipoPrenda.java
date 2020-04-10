@@ -6,11 +6,18 @@ public class TipoPrenda {
 
     Categoria categoria;
 
+    String nombrePrenda;
 
-    public TipoPrenda(Categoria categoria){
+    public TipoPrenda(String nombrePrenda , Categoria categoria){
+
+        this.nombrePrenda = nombrePrenda;
 
         this.setCategoria(categoria);
 
+    }
+
+    public Categoria getCategoria() {
+        return categoria;
     }
 
     public void setCategoria(Categoria categoria) {

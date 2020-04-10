@@ -3,30 +3,57 @@ package main.java.atuendo;
 import main.java.prenda.Categoria;
 import main.java.prenda.Prenda;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class Atuendo {
 
-    Map<String, Categoria> prendas = new HashMap<String, Categoria>();
+    List<Prenda> prendas = new ArrayList<Prenda>();
 
     public void agregarPrenda( Prenda prendaNueva){
 
-        prendas.put(prendaNueva.getTipoPrenda(), prendaNueva.getCategoria() );
+
+        prendas.add(prendaNueva);
+
+       // prendas.put(prendaNueva.getTipoPrenda(), prendaNueva.getCategoria() );
 
     }
 
-    public Map<String, Categoria> getPrendas() {
+    public List<Prenda> getPrendas() {
 
         return prendas;
 
     }
 
-    public Categoria getCategoria(String string ){
+    public long getCategoria(String string ){
 
-        return this.prendas.get(string);
-
+        long conteo = prendas.stream()
+                .filter( p -> p.getTipoPrenda().contains(string) )
+                .count();
+        return conteo;
     }
 
+    public long cuantasTieneTipoPrendas(String string ){
+
+        long conteo = prendas.stream()
+                .filter( p -> p.getTipoPrenda().contains(string) )
+                .count();
+
+        return conteo;
+    }
+
+    public boolean containsTipoPrendas(String string ){
+
+        return prendas.stream().anyMatch( p -> p.getTipoPrenda().contains(string) );
+              //  .filter( p -> p.getTipoPrenda().contains(string) )
+                //.count();
+
+
+
+
+       // return conteo;
+    }
 
 }

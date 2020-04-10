@@ -33,12 +33,12 @@ public class Prenda {
 
     }
 
-    public void setTipoPrenda(TipoPrenda tipoPrenda) {
-        if(tipoPrenda.equals(null))
-            throw new CategoriaException("Categoria NUll, debe asignar Una Categoria correcta");
-        else
-            this.categoria = categoria;
-    }
+//    public void setTipoPrenda(TipoPrenda tipoPrenda) {
+//        if(tipoPrenda.equals(null))
+//            throw new CategoriaException("Categoria NUll, debe asignar Una Categoria correcta");
+//        else
+//            this.categoria = categoria;
+//    }
 
     public void setCategoria(Categoria categoria) {
         if(categoria.equals(null))

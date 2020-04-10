@@ -20,11 +20,18 @@ public class AtuendoTest {
         Atuendo atuendo = new Atuendo();
 
         Prenda sueter = new Prenda( "sueter",Categoria.SUPERIOR, Material.LANA, Color.AMARILLO, Color.ROJO );
+        Prenda zapatos = new Prenda( "zapatos", Categoria.CALZADO, Material.PLASTICO, Color.NEGRO, null    );
 
         atuendo.agregarPrenda(sueter);
 
+        atuendo.agregarPrenda(zapatos);
 
-        assertEquals(atuendo.getCategoria("sueter"),Categoria.SUPERIOR);
+        assertEquals(atuendo.containsTipoPrendas("sueter"),true);
+
+      //  assertEquals(atuendo.cuantasTieneTipoPrendas("sueter"),1);
+        //assertEquals(atuendo.getCategoria("sueter"),1);
+
+     //  assertEquals(atuendo.getCategoria("sueter"),Categoria.SUPERIOR);
     }
 
 
@@ -40,6 +47,8 @@ public class AtuendoTest {
 
 
         assertEquals(  atuendo.getCategoria("zapatos"), Categoria.CALZADO     );
+
+        // assertEquals(  atuendo.getCategoria("zapatos"), Categoria.CALZADO     );
 
     }
 
