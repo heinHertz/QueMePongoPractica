@@ -1,7 +1,5 @@
 package main.java.prenda;
 
-import main.java.Categoria;
-import main.java.prenda.Color;
 import main.java.utiles.ColorException;
 
 public class Prenda {

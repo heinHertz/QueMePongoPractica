@@ -1,6 +1,6 @@
 package test;
 
-import main.java.Categoria;
+import main.java.prenda.Categoria;
 import main.java.prenda.Color;
 import main.java.prenda.Material;
 import main.java.prenda.Prenda;
@@ -25,7 +25,7 @@ public class PrendaTest {
 
         Prenda pantalon = new Prenda( "pantalon", Categoria.INFERIOR, Material.POLIESTER, Color.NEGRO,null   );
 
-        assertNotEquals( pantalon.getColorPrincipal(), Color.BLANCO;
+        assertNotEquals( pantalon.getColorPrincipal(), Color.BLANCO);
 
     }
 
@@ -33,7 +33,7 @@ public class PrendaTest {
     @Test(expected = RuntimeException.class)
     public void testPrendaColorPrincipalNullSaltaException(){
 
-        Prenda pantalon = new Prenda( "pantalon", Categoria.INFERIOR, Material.POLIESTER,null,  Color.BLANCO    );
+        Prenda pantalon = new Prenda( "pantalon", Categoria.INFERIOR, Material.POLIESTER, null,  null    );
 
     }
 

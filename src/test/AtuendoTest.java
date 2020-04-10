@@ -1,7 +1,7 @@
 package test;
 
 import main.java.atuendo.Atuendo;
-import main.java.Categoria;
+import main.java.prenda.Categoria;
 import main.java.prenda.Color;
 import main.java.prenda.Material;
 import main.java.prenda.Prenda;
