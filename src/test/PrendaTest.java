@@ -11,6 +11,16 @@ import static org.junit.Assert.assertNotEquals;
 
 public class PrendaTest {
 
+
+    @Test(expected = RuntimeException.class)
+    public void testPrendaCategoriaNULL(){
+
+        Prenda pantalon = new Prenda( "pantalon", null, Material.POLIESTER, Color.NEGRO,Color.BLANCO    );
+
+
+    }
+
+
     @Test
     public void testPrendaColorPrincipalIgual(){
 

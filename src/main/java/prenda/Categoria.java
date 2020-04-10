@@ -2,6 +2,9 @@ package main.java.prenda;
 
 public enum Categoria {
 
-    SUPERIOR,CALZADO, INFERIOR, ACCESORIOS;
+    SUPERIOR,
+    CALZADO,
+    INFERIOR,
+    ACCESORIOS;
 
 }

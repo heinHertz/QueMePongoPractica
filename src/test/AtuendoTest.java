@@ -1,10 +1,7 @@
 package test;
 
 import main.java.atuendo.Atuendo;
-import main.java.prenda.Categoria;
-import main.java.prenda.Color;
-import main.java.prenda.Material;
-import main.java.prenda.Prenda;
+import main.java.prenda.*;
 import org.junit.Test;
 
 //import static org.junit.jupiter.api.Assertions.*;
@@ -13,6 +10,19 @@ import static org.junit.Assert.assertNotEquals;
 
 
 public class AtuendoTest {
+
+    @Test
+    public void testTipoPrenda(){
+
+        TipoPrenda remera = new TipoPrenda("remera" , Categoria.SUPERIOR  );
+
+
+
+
+
+
+    }
+
 
     @Test
     public void testAtuendo() {

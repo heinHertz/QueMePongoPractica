@@ -22,7 +22,7 @@ public class Prenda {
 
         this.tipoPrenda = tipoPrenda;
 
-        this.categoria = categoria;
+        this.setCategoria(categoria);
 
         this.setMaterial(material);
 
