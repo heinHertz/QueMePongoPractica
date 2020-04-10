@@ -24,7 +24,7 @@ public class Prenda {
 
         this.material = material;
 
-        this.colorPrincipal = colorPrincipal;
+        this.setColorPrincipal( colorPrincipal);
 
         this.colorSecundario = colorSecundario;
 
@@ -46,8 +46,8 @@ public class Prenda {
 
     }
 
-    public void setColor(Color colorPrincipal) {
-        this.colorPrincipal = colorPrincipal;
+    public Color getColorPrincipal() {
+        return this.colorPrincipal;
     }
 
     public Color getColorSecundario() {
@@ -58,11 +58,11 @@ public class Prenda {
         return material;
     }
 
-    public Color getColorPrincipal() {
-        if(this.colorPrincipal.equals(null) )
+    public void setColorPrincipal(Color colorPrincipal) {
+        if(colorPrincipal.equals(null) )
             throw new ColorException("Color NUll, debe asignar Un Color Primario");
         else
-            return colorPrincipal;
+             this.colorPrincipal = colorPrincipal;
     }
 
 

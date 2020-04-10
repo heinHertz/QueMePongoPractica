@@ -8,10 +8,7 @@ import java.util.Map;
 
 public class Atuendo {
 
-
     Map<String, Categoria> prendas = new HashMap<String, Categoria>();
-
-
 
     public void agregarPrenda( Prenda prendaNueva){
 
@@ -20,13 +17,14 @@ public class Atuendo {
     }
 
     public Map<String, Categoria> getPrendas() {
+
         return prendas;
+
     }
 
     public Categoria getCategoria(String string ){
 
         return this.prendas.get(string);
-
 
     }
 
