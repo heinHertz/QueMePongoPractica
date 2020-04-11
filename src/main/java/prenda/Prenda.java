@@ -22,7 +22,8 @@ public class Prenda {
 
     public Prenda( TipoPrenda tipoPrenda, Categoria categoria, Material material, Color colorPrimario, Color colorSecundario){
 
-        this.tipoPrenda = tipoPrenda;
+
+        this.setTipoPrenda( tipoPrenda, categoria );
 
         this.setCategoria(categoria);
 
@@ -35,11 +36,11 @@ public class Prenda {
 
     }
 
-    public void setTipoPrenda(TipoPrenda tipoPrenda, categoria) {
-        if(tipoPrenda.equals(null))
+    public void setTipoPrenda(TipoPrenda tipoPrenda, Categoria categoria) {
+        if(!tipoPrenda.getCategoria().equals(categoria))
             throw new TipoPrendaException( "Las Prendas deben Corresponder Con su Tipo De Prenda. (Ej, una remera no puede ser calzado)");
         else
-            this.categoria = categoria;
+            this.tipoPrenda = tipoPrenda;
     }
 
     public void setCategoria(Categoria categoria) {

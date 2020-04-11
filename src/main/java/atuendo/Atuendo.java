@@ -26,12 +26,17 @@ public class Atuendo {
 
     }
 
+    public void agregarCalzado(Prenda prendaCalzado){
+
+    }
+
+
     public List<Prenda> getPrendas() {
 
         return prendas;
 
     }
-
+/*
     public long getCategoria(String string ){
 
         long conteo = prendas.stream()
@@ -69,7 +74,7 @@ public class Atuendo {
 
 
 
-
+*/
 
     public void tienePrendasValidas(){}
 

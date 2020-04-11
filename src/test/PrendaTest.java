@@ -1,9 +1,6 @@
 package test;
 
-import main.java.prenda.Categoria;
-import main.java.prenda.Color;
-import main.java.prenda.Material;
-import main.java.prenda.Prenda;
+import main.java.prenda.*;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -11,11 +8,14 @@ import static org.junit.Assert.assertNotEquals;
 
 public class PrendaTest {
 
+    public TipoPrenda remera = new TipoPrenda( "remera", Categoria.SUPERIOR );
+    public TipoPrenda pantalon = new TipoPrenda( "pantalon", Categoria.INFERIOR );
+
 
     @Test(expected = RuntimeException.class)
     public void testPrendaCategoriaNULL(){
 
-        Prenda pantalon = new Prenda( "pantalon", null, Material.POLIESTER, Color.NEGRO,Color.BLANCO    );
+        Prenda pantalon1 = new Prenda( pantalon, null, Material.POLIESTER, Color.NEGRO,Color.BLANCO    );
 
 
     }
@@ -24,28 +24,28 @@ public class PrendaTest {
     @Test
     public void testPrendaColorPrincipalIgual(){
 
-        Prenda pantalon = new Prenda( "pantalon", Categoria.INFERIOR, Material.POLIESTER, Color.NEGRO,Color.BLANCO    );
+        Prenda pantalon1 = new Prenda( pantalon, Categoria.INFERIOR, Material.POLIESTER, Color.NEGRO,Color.BLANCO    );
 
-        Prenda pantalon2 = new Prenda( "pantalon", Categoria.INFERIOR, Material.POLIESTER, Color.NEGRO,Color.BLANCO);
+        Prenda pantalon2 = new Prenda( pantalon, Categoria.INFERIOR, Material.POLIESTER, Color.NEGRO,Color.BLANCO);
 
-        assertEquals(  pantalon.equals( pantalon2) ,true );
+        assertEquals(  pantalon1.equals( pantalon2) ,true );
     }
 
     @Test
     public void testPrendaColorPrincipalDiferentes(){
 
-        Prenda pantalon = new Prenda( "pantalon", Categoria.INFERIOR, Material.POLIESTER, Color.NEGRO,Color.BLANCO    );
+        Prenda pantalon1 = new Prenda( pantalon, Categoria.INFERIOR, Material.POLIESTER, Color.NEGRO,Color.BLANCO    );
 
-        Prenda pantalon2 = new Prenda( "pantalon", Categoria.INFERIOR, Material.POLIESTER, Color.AMARILLO,Color.BLANCO);
+        Prenda pantalon2 = new Prenda( pantalon, Categoria.INFERIOR, Material.POLIESTER, Color.AMARILLO,Color.BLANCO);
 
-        assertNotEquals(  pantalon.equals( pantalon2) ,true );
+        assertNotEquals(  pantalon1.equals( pantalon2) ,true );
     }
     @Test
     public void testPrendaDistintosDeberiaFallar(){
 
-        Prenda pantalon = new Prenda( "pantalon", Categoria.INFERIOR, Material.POLIESTER, Color.NEGRO,null   );
+        Prenda pantalon1 = new Prenda( pantalon, Categoria.INFERIOR, Material.POLIESTER, Color.NEGRO,null   );
 
-        assertNotEquals( pantalon.getColorPrimario(), Color.BLANCO);
+        assertNotEquals( pantalon1.getColorPrimario(), Color.BLANCO);
 
     }
 
@@ -53,7 +53,7 @@ public class PrendaTest {
     @Test(expected = RuntimeException.class)
     public void testPrendaColorPrincipalNullSaltaException(){
 
-        Prenda pantalon = new Prenda( "pantalon", Categoria.INFERIOR, Material.POLIESTER, null,  null    );
+        Prenda pantalon1 = new Prenda( pantalon, Categoria.INFERIOR, Material.POLIESTER, null,  null    );
 
     }
 
