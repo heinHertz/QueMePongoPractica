@@ -25,7 +25,7 @@ public class Atuendo {
 
     }
 
-    public List<Prenda> getPrendas() {        return prendas;    }
+    public List<Prenda> getPrendas() {   return prendas;    }
 
     public boolean tieneCategoriaValida(Prenda prendaNueva ){
 
@@ -33,6 +33,22 @@ public class Atuendo {
 
     }
 
+    public boolean tieneTodasLasCategorias(){
+
+        if( this.cantidadCategorias() == 4 ) return true; else return  false;
+
+    }
+
+    public long cantidadCategorias(){
+
+        return  (long)prendas.stream()
+                .filter( p-> p.getCategoria().equals(Categoria.INFERIOR)
+                ||  p.getCategoria().equals(Categoria.SUPERIOR)
+                ||  p.getCategoria().equals(Categoria.CALZADO)
+                 ||  p.getCategoria().equals(Categoria.ACCESORIOS) )
+                .count();
+
+    }
 
 
 

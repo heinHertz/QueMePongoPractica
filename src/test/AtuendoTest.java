@@ -25,19 +25,8 @@ public class AtuendoTest {
         assertEquals(atuendo.tieneCategoriaValida(sueter) , true);
 
     }
-//    @Test
-//    public void testA(){
-//
-//        Atuendo atuendo = new Atuendo();
-//
-//        Prenda sueter = new Prenda( tipoRemera,Categoria.SUPERIOR, Material.LANA, Color.AMARILLO, Color.ROJO );
-//
-//
-//
-//        assertEquals(atuendo.tieneCategoriaValida(sueter) , true);
-//
-//    }
-    @Test
+    
+   @Test
     public void testTipoPrendaNoValida(){
 
         Atuendo atuendo = new Atuendo();
@@ -50,26 +39,6 @@ public class AtuendoTest {
         assertEquals(atuendo.tieneCategoriaValida(chomba) , false);
 
     }
-//
-//    @Test
-//    public void testTipoPrendaNoValida(){
-//
-//        Atuendo atuendo = new Atuendo();
-//
-//        Prenda sueter = new Prenda( tipoRemera,Categoria.SUPERIOR, Material.LANA, Color.AMARILLO, Color.ROJO );
-//        Prenda chomba = new Prenda( tipoRemera,Categoria.SUPERIOR, Material.LANA, Color.AMARILLO, Color.ROJO );
-//
-//        atuendo.agregarPrenda(sueter);
-//
-//        assertEquals(atuendo.tieneCategoriaValida(chomba) , false);
-//
-//    }
-
-
-
-
-
-
 
    @Test (expected = RuntimeException.class)
     public void testAtuendoSaltaExceptionPorCategoriaRepetida() {
@@ -85,8 +54,6 @@ public class AtuendoTest {
 
     }
 
-
-
     @Test(expected = RuntimeException.class)
     public void testCalzadoDeberiaFallar(){
 
@@ -98,5 +65,29 @@ public class AtuendoTest {
 
 
     }
+
+    @Test
+    public void testA(){
+
+        Atuendo atuendo = new Atuendo();
+
+        TipoPrenda tipoAnteojos = new TipoPrenda( "anteojos", Categoria.ACCESORIOS );
+        TipoPrenda tipoPantalon = new TipoPrenda( "pantalon", Categoria.INFERIOR );
+
+        Prenda sueter = new Prenda( tipoRemera,Categoria.SUPERIOR, Material.LANA, Color.AMARILLO, Color.ROJO );
+        Prenda zapatillas = new Prenda( tipoCalzado,Categoria.CALZADO, Material.LANA, Color.AMARILLO, Color.ROJO );
+        Prenda anteojos = new Prenda( tipoAnteojos,Categoria.ACCESORIOS, Material.PLASTICO, Color.NEGRO, null);
+        Prenda pantalon = new Prenda( tipoPantalon,Categoria.INFERIOR, Material.LANA, Color.NEGRO, Color.MARRON );
+
+        atuendo.agregarPrenda(sueter);
+        atuendo.agregarPrenda(zapatillas);
+        atuendo.agregarPrenda(anteojos);
+        atuendo.agregarPrenda(pantalon);
+
+        assertEquals(  atuendo.tieneTodasLasCategorias(), true);
+
+    }
+
+
 
 }

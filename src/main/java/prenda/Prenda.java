@@ -77,9 +77,6 @@ public class Prenda {
         else return false;
     }
 
-    public TipoPrenda getTipoPrenda() {
-        return tipoPrenda;
-    }
 
     public Categoria getCategoria() {
         return categoria;
@@ -93,7 +90,6 @@ public class Prenda {
         return colorSecundario;
     }
 
-    public Material getMaterial() {   return material;   }
 
     // ESTO SIRVE SI AL COMPARAR DOS OBJETOS PRENDA , SON IGUALES SI TIENEN LAS MISMAS ATRIBUTOS CON LOS MISMOS VALORES
     @Override
