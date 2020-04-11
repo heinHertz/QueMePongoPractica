@@ -17,10 +17,6 @@ public class AtuendoTest {
         TipoPrenda remera = new TipoPrenda("remera" , Categoria.SUPERIOR  );
 
 
-
-
-
-
     }
 
 

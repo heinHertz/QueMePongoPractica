@@ -8,7 +8,8 @@ import java.util.Objects;
 
 public class Prenda {
 
-    String tipoPrenda;
+    //String tipoPrenda;
+    TipoPrenda tipoPrenda;
 
     Categoria categoria;
 
@@ -18,7 +19,7 @@ public class Prenda {
 
     Color colorSecundario;
 
-    public Prenda( String tipoPrenda, Categoria categoria, Material material, Color colorPrimario, Color colorSecundario){
+    public Prenda( TipoPrenda tipoPrenda, Categoria categoria, Material material, Color colorPrimario, Color colorSecundario){
 
         this.tipoPrenda = tipoPrenda;
 
@@ -33,12 +34,12 @@ public class Prenda {
 
     }
 
-//    public void setTipoPrenda(TipoPrenda tipoPrenda) {
-//        if(tipoPrenda.equals(null))
-//            throw new CategoriaException("Categoria NUll, debe asignar Una Categoria correcta");
-//        else
-//            this.categoria = categoria;
-//    }
+    public void setTipoPrenda(TipoPrenda tipoPrenda) {
+        if(tipoPrenda.equals(null))
+            throw new CategoriaException("Categoria NUll, debe asignar Una Categoria correcta");
+        else
+            this.categoria = categoria;
+    }
 
     public void setCategoria(Categoria categoria) {
         if(categoria.equals(null))
@@ -56,19 +57,33 @@ public class Prenda {
 
 
     public void setColorPrimario(Color colorPrimario) {
-        if(colorPrimario.equals(null) )
+        if(  colorPrimario.equals(null)   )
             throw new ColorException("Color NUll, debe asignar Un Color Primario");
         else
              this.colorPrimario = colorPrimario;
     }
 
     public void setColorSecundario(Color colorSecundario) {
-        this.colorSecundario = colorSecundario;
+        if(   !colorSecundario.equals(null)  )
+            throw new ColorException("Color Secundario ya Asignado");
+        else
+            this.colorSecundario = colorSecundario;
     }
 
-    public String getTipoPrenda() {
+    public boolean existeColorSecundarioPrenda(){
+        if(   colorSecundario.equals(null)  )
+               return false;
+        else
+               return true;
+    }
+
+   // public void setColorSecundario(Color colorSecundario) {   this.colorSecundario = colorSecundario;    }
+
+    // public String getTipoPrenda() {  return tipoPrenda; }
+    public TipoPrenda getTipoPrenda() {
         return tipoPrenda;
     }
+
 
     public Categoria getCategoria() {
         return categoria;

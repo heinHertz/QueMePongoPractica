@@ -10,6 +10,7 @@ import static org.junit.Assert.assertEquals;
 
 public class ColorTest {
 
+
     @Test
     public void colorSecundarioTest(){
 
@@ -28,8 +29,6 @@ public class ColorTest {
 
     }
 
-
-
     // este Test espera una Excepcion de Tipo Runtime en caso de que no tenga color principal asignado salta la Exception
 
     @Test(expected = RuntimeException.class)
@@ -42,6 +41,14 @@ public class ColorTest {
 
     }
 
+   @Test (expected = RuntimeException.class)
+    public void colorSecundarioTest3(){
+
+        Prenda pantalon = new Prenda( "pantalon", Categoria.INFERIOR, Material.POLIESTER, Color.NEGRO, Color.BLANCO    );
+
+        pantalon.setColorSecundario(Color.AMARILLO);
+
+    }
 
 
 
