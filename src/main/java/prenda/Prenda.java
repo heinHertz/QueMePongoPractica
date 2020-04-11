@@ -9,7 +9,6 @@ import java.util.Objects;
 
 public class Prenda {
 
-    //String tipoPrenda;
     TipoPrenda tipoPrenda;
 
     Categoria categoria;
@@ -66,26 +65,16 @@ public class Prenda {
     }
 
     public void setColorSecundario(Color colorSecundario) {
-        if(   !colorSecundario.equals(null)  )
+        if(   colorSecundario.equals(null)  )
             throw new ColorException("Color Secundario ya Asignado");
         else
             this.colorSecundario = colorSecundario;
     }
 
-    public boolean existeColorSecundarioPrenda(){
-        if(   colorSecundario.equals(null)  )
-               return false;
-        else
-               return true;
-    }
 
-   // public void setColorSecundario(Color colorSecundario) {   this.colorSecundario = colorSecundario;    }
-
-    // public String getTipoPrenda() {  return tipoPrenda; }
     public TipoPrenda getTipoPrenda() {
         return tipoPrenda;
     }
-
 
     public Categoria getCategoria() {
         return categoria;
@@ -99,10 +88,7 @@ public class Prenda {
         return colorSecundario;
     }
 
-    public Material getMaterial() {
-
-        return material;
-    }
+    public Material getMaterial() {   return material;   }
 
     // ESTO SIRVE SI AL COMPARAR DOS OBJETOS PRENDA , SON IGUALES SI TIENEN LAS MISMAS ATRIBUTOS CON LOS MISMOS VALORES
     @Override

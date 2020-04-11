@@ -1,5 +1,6 @@
 package test;
 
+import com.sun.corba.se.spi.logging.CORBALogDomains;
 import main.java.prenda.*;
 import org.junit.Test;
 
@@ -20,26 +21,16 @@ public class PrendaTest {
 
     }
 
-//
-//    @Test
-//    public void testPrendaColorPrincipalIgual(){
-//
-//        Prenda pantalon1 = new Prenda( pantalon, Categoria.INFERIOR, Material.POLIESTER, Color.NEGRO,Color.BLANCO    );
-//
-//        Prenda pantalon2 = new Prenda( pantalon, Categoria.INFERIOR, Material.POLIESTER, Color.NEGRO,Color.BLANCO);
-//
-//        assertEquals(  pantalon1.equals( pantalon2) ,true );
-//    }
+    @Test
+    public void testPrendaColorSecundarioDiferentes(){
 
-//    @Test
-//    public void testPrendaColorPrincipalDiferentes(){
-//
-//        Prenda pantalon1 = new Prenda( pantalon, Categoria.INFERIOR, Material.POLIESTER, Color.NEGRO,Color.BLANCO    );
-//
-//        Prenda pantalon2 = new Prenda( pantalon, Categoria.INFERIOR, Material.POLIESTER, Color.AMARILLO,Color.BLANCO);
-//
-//        assertNotEquals(  pantalon1.equals( pantalon2) ,true );
-//    }
+        Prenda pantalonAdidas = new Prenda( pantalon, Categoria.INFERIOR, Material.POLIESTER, Color.NEGRO,null   );
+
+        pantalonAdidas.setColorSecundario(Color.BLANCO);
+
+        assertEquals(  pantalonAdidas.getColorSecundario() , Color.BLANCO);
+    }
+
     @Test
     public void testPrendaDistintosDeberiaFallar(){
 

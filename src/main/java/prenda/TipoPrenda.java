@@ -20,6 +20,8 @@ public class TipoPrenda {
         return categoria;
     }
 
+    public String getNombrePrenda(){ return nombrePrenda; }
+
     public void setCategoria(Categoria categoria) {
         if(categoria.equals(null))
             throw new CategoriaException("Categoria NUll, debe asignar Una Categoria correcta");

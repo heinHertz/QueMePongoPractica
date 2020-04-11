@@ -4,6 +4,7 @@ import main.java.prenda.Categoria;
 import main.java.prenda.Color;
 import main.java.prenda.Material;
 import main.java.prenda.Prenda;
+import main.java.utiles.CategoriaException;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -16,27 +17,29 @@ public class Atuendo {
 
     public void agregarPrenda( Prenda prendaNueva){
 
+        if(tieneCategoriaValida(prendaNueva))
+            prendas.add(prendaNueva);
+        else
+            throw new CategoriaException("Debe ingresar al Atuendo una prenda Cuya Categoria esté Disponible");
 
-        prendas.add(prendaNueva);
-
-       // prendas.put(prendaNueva.getTipoPrenda(), prendaNueva.getCategoria() );
 
     }
 
+    public List<Prenda> getPrendas() {        return prendas;    }
 
+    public boolean tieneCategoriaValida(Prenda prendaNueva ){
 
-    public List<Prenda> getPrendas() {
-
-        return prendas;
+        return !prendas.stream().anyMatch( p -> p.getCategoria().equals(prendaNueva.getCategoria()) );
 
     }
+
 /*
-    public long getCategoria(String string ){
+    public Prenda getCategoria(String nombreTipoPrenda ){
 
-        long conteo = prendas.stream()
-                .filter( p -> p.getTipoPrenda().contains(string) )
-                .count();
-        return conteo;
+        return    prendas.contains(Categoria.INFERIOR)
+          //      .filter( p -> p.getTipoPrenda().getNombrePrenda().contains(nombreTipoPrenda))
+             //   .
+
     }
 
     public long cuantasTieneTipoPrendas(String string ){
@@ -48,11 +51,7 @@ public class Atuendo {
         return conteo;
     }
 
-    public boolean containsTipoPrendas(String string ){
 
-        return !prendas.stream().anyMatch( p -> p.getTipoPrenda().contains(null) );
-
-    }
 
     public boolean containsCategoria(){
 

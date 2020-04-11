@@ -11,89 +11,65 @@ import static org.junit.Assert.assertNotEquals;
 
 public class AtuendoTest {
 
-    TipoPrenda tipoSuperior = new TipoPrenda( "remera", Categoria.SUPERIOR );
-    TipoPrenda tipoCalzado = new TipoPrenda( "zapatos", Categoria.SUPERIOR );
+    TipoPrenda tipoRemera = new TipoPrenda( "remera", Categoria.SUPERIOR );
+    TipoPrenda tipoCalzado = new TipoPrenda( "zapatos", Categoria.CALZADO );
 
 
     @Test
-    public void testTipoPrenda(){
+    public void testTipoPrendaEnAtuendo(){
 
-        TipoPrenda remera = new TipoPrenda("remera" , Categoria.SUPERIOR  );
+        Atuendo atuendo = new Atuendo();
 
+        Prenda sueter = new Prenda( tipoRemera,Categoria.SUPERIOR, Material.LANA, Color.AMARILLO, Color.ROJO );
+
+        assertEquals(atuendo.tieneCategoriaValida(sueter) , true);
 
     }
 
-/*
     @Test
-    public void testAtuendo() {
+    public void testTipoPrendaNoValida(){
 
         Atuendo atuendo = new Atuendo();
-       // TipoPrenda tipoSuperior = new TipoPrenda( "remera", Categoria.SUPERIOR );
-       // TipoPrenda tipoCalzado = new TipoPrenda( "zapatos", Categoria.SUPERIOR );
 
-        Prenda sueter = new Prenda( tipoSuperior,Categoria.SUPERIOR, Material.LANA, Color.AMARILLO, Color.ROJO );
-        Prenda zapatos = new Prenda( tipoCalzado, Categoria.CALZADO, Material.PLASTICO, Color.NEGRO, null    );
+        Prenda sueter = new Prenda( tipoRemera,Categoria.SUPERIOR, Material.LANA, Color.AMARILLO, Color.ROJO );
+        Prenda chomba = new Prenda( tipoRemera,Categoria.SUPERIOR, Material.LANA, Color.AMARILLO, Color.ROJO );
+
+        atuendo.agregarPrenda(sueter);
+
+        assertEquals(atuendo.tieneCategoriaValida(chomba) , false);
+
+    }
+
+
+
+   @Test (expected = RuntimeException.class)
+    public void testAtuendoSaltaExceptionPorCategoriaRepetida() {
+
+        Atuendo atuendo = new Atuendo();
+
+        Prenda sueter = new Prenda( tipoRemera,Categoria.SUPERIOR, Material.LANA, Color.AMARILLO, Color.ROJO );
+        Prenda zapatos = new Prenda( tipoCalzado, Categoria.SUPERIOR, Material.PLASTICO, Color.NEGRO, null    );
 
         atuendo.agregarPrenda(sueter);
 
         atuendo.agregarPrenda(zapatos);
 
-        assertEquals(atuendo.containsTipoPrendas("sueter"),true);
-
-      //  assertEquals(atuendo.cuantasTieneTipoPrendas("sueter"),1);
-        //assertEquals(atuendo.getCategoria("sueter"),1);
-
-     //  assertEquals(atuendo.getCategoria("sueter"),Categoria.SUPERIOR);
     }
 
 
-    @Test
-    public void testPrenda(){
+
+    @Test(expected = RuntimeException.class)
+    public void testCalzadoDeberiaFallar(){
 
         Atuendo atuendo = new Atuendo();
 
-
-        Prenda zapatos = new Prenda( tipoCalzado, Categoria.CALZADO, Material.PLASTICO, Color.NEGRO, null    );
-
-        atuendo.agregarPrenda(zapatos);
-
-
-        assertEquals(  atuendo.getCategoria("zapatos"), Categoria.CALZADO     );
-
-        // assertEquals(  atuendo.getCategoria("zapatos"), Categoria.CALZADO     );
-
-    }
-
-    @Test
-    public void testZapatosDeberiaFallar(){
-
-        Prenda zapatos = new Prenda( tipoCalzado, Categoria.CALZADO, Material.PLASTICO, Color.NEGRO, null    );
-
-        Atuendo atuendo = new Atuendo();
-
-        atuendo.agregarPrenda(zapatos);
-
-        assertNotEquals(  atuendo.getCategoria("zapatos"), Categoria.SUPERIOR     );
-
-
-    }
-
-    @Test
-    public void testCalzado(){
-
-
-        Prenda calzado = new Prenda( tipoCalzado, Categoria.CALZADO, Material.PLASTICO, Color.NEGRO, Color.BLANCO);
-
-        Atuendo atuendo = new Atuendo();
+        Prenda calzado = new Prenda( tipoRemera, Categoria.CALZADO, Material.PLASTICO, Color.NEGRO, Color.BLANCO);
 
         atuendo.agregarPrenda(calzado);
 
-        assertEquals(atuendo.getCategoria("zapatillas"), Categoria.ACCESORIOS);
-
-
 
     }
 
-*/
+
 
 }
