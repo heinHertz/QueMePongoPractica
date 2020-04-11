@@ -33,48 +33,7 @@ public class Atuendo {
 
     }
 
-/*
-    public Prenda getCategoria(String nombreTipoPrenda ){
-
-        return    prendas.contains(Categoria.INFERIOR)
-          //      .filter( p -> p.getTipoPrenda().getNombrePrenda().contains(nombreTipoPrenda))
-             //   .
-
-    }
-
-    public long cuantasTieneTipoPrendas(String string ){
-
-        long conteo = prendas.stream()
-                .filter( p -> p.getTipoPrenda().contains(string) )
-                .count();
-
-        return conteo;
-    }
 
 
-
-    public boolean containsCategoria(){
-
-        return !prendas.stream().anyMatch( p -> p.getCategoria().equals(null) );
-
-    }
-
-    public boolean containsColor(Color color){
-
-        return prendas.stream().anyMatch( p -> p.getColorPrimario().equals(color));
-
-    }
-
-
-
-*/
-
-//    public void tienePrendasValidas(Prenda prenda){
-//
-//        if(prenda.getColorPrimario())
-//
-//
-//
-//    }
 
 }

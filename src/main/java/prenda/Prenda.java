@@ -71,6 +71,11 @@ public class Prenda {
             this.colorSecundario = colorSecundario;
     }
 
+    public boolean prendaPerteneceACategoria(Categoria categoria){
+        if(this.getCategoria().equals(categoria))
+            return true;
+        else return false;
+    }
 
     public TipoPrenda getTipoPrenda() {
         return tipoPrenda;

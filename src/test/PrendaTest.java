@@ -18,7 +18,6 @@ public class PrendaTest {
 
         Prenda pantalon1 = new Prenda( pantalon, null, Material.POLIESTER, Color.NEGRO,Color.BLANCO    );
 
-
     }
 
     @Test
@@ -30,6 +29,14 @@ public class PrendaTest {
 
         assertEquals(  pantalonAdidas.getColorSecundario() , Color.BLANCO);
     }
+    @Test
+    public void testPrendaPerteneceACategoria(){
+
+        Prenda pantalonAdidas = new Prenda( pantalon, Categoria.INFERIOR, Material.POLIESTER, Color.NEGRO,null   );
+
+        assertEquals( pantalonAdidas.prendaPerteneceACategoria(Categoria.INFERIOR) , true);
+
+    }
 
     @Test
     public void testPrendaDistintosDeberiaFallar(){
@@ -37,7 +44,6 @@ public class PrendaTest {
         Prenda pantalonAdidas = new Prenda( pantalon, Categoria.INFERIOR, Material.POLIESTER, Color.NEGRO,null   );
 
         assertNotEquals( pantalonAdidas.getColorPrimario(), Color.BLANCO);
-
     }
 
     //  TEST  QUE ESPERA UNA EXCEPTION POR FALLA DE COLOR PRIMARIO

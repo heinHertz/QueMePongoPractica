@@ -25,7 +25,18 @@ public class AtuendoTest {
         assertEquals(atuendo.tieneCategoriaValida(sueter) , true);
 
     }
-
+//    @Test
+//    public void testA(){
+//
+//        Atuendo atuendo = new Atuendo();
+//
+//        Prenda sueter = new Prenda( tipoRemera,Categoria.SUPERIOR, Material.LANA, Color.AMARILLO, Color.ROJO );
+//
+//
+//
+//        assertEquals(atuendo.tieneCategoriaValida(sueter) , true);
+//
+//    }
     @Test
     public void testTipoPrendaNoValida(){
 
@@ -39,6 +50,24 @@ public class AtuendoTest {
         assertEquals(atuendo.tieneCategoriaValida(chomba) , false);
 
     }
+//
+//    @Test
+//    public void testTipoPrendaNoValida(){
+//
+//        Atuendo atuendo = new Atuendo();
+//
+//        Prenda sueter = new Prenda( tipoRemera,Categoria.SUPERIOR, Material.LANA, Color.AMARILLO, Color.ROJO );
+//        Prenda chomba = new Prenda( tipoRemera,Categoria.SUPERIOR, Material.LANA, Color.AMARILLO, Color.ROJO );
+//
+//        atuendo.agregarPrenda(sueter);
+//
+//        assertEquals(atuendo.tieneCategoriaValida(chomba) , false);
+//
+//    }
+
+
+
+
 
 
 
@@ -69,7 +98,5 @@ public class AtuendoTest {
 
 
     }
-
-
 
 }
