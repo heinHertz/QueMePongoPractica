@@ -16,9 +16,6 @@ public class Atuendo {
 
     public void agregarPrenda( Prenda prendaNueva){
 
-      //  if(prendaNueva.getMaterial() != null || )
-
-
 
         prendas.add(prendaNueva);
 
@@ -26,9 +23,6 @@ public class Atuendo {
 
     }
 
-    public void agregarCalzado(Prenda prendaCalzado){
-
-    }
 
 
     public List<Prenda> getPrendas() {
@@ -76,6 +70,12 @@ public class Atuendo {
 
 */
 
-    public void tienePrendasValidas(){}
+//    public void tienePrendasValidas(Prenda prenda){
+//
+//        if(prenda.getColorPrimario())
+//
+//
+//
+//    }
 
 }
