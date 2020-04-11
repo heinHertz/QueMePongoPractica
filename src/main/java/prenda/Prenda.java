@@ -3,6 +3,7 @@ package main.java.prenda;
 import main.java.utiles.CategoriaException;
 import main.java.utiles.ColorException;
 import main.java.utiles.MaterialException;
+import main.java.utiles.TipoPrendaException;
 
 import java.util.Objects;
 
@@ -34,9 +35,9 @@ public class Prenda {
 
     }
 
-    public void setTipoPrenda(TipoPrenda tipoPrenda) {
+    public void setTipoPrenda(TipoPrenda tipoPrenda, categoria) {
         if(tipoPrenda.equals(null))
-            throw new CategoriaException("Categoria NUll, debe asignar Una Categoria correcta");
+            throw new TipoPrendaException( "Las Prendas deben Corresponder Con su Tipo De Prenda. (Ej, una remera no puede ser calzado)");
         else
             this.categoria = categoria;
     }

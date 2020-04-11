@@ -12,9 +12,9 @@ public class testTipoPrenda {
     @Test
     public void testTipoPrenda(){
 
-        TipoPrenda tipo = new TipoPrenda( "remera", Categoria.SUPERIOR );
+        TipoPrenda tipoPrenda = new TipoPrenda( "remera", Categoria.SUPERIOR );
 
-        Prenda pantalon = new Prenda( "pantalon", Categoria.INFERIOR, Material.POLIESTER, null,  null    );
+        Prenda pantalon = new Prenda( tipoPrenda, Categoria.INFERIOR, Material.POLIESTER, null,  null    );
 
 
         Atuendo atuendo = new Atuendo();
