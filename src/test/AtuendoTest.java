@@ -25,7 +25,7 @@ public class AtuendoTest {
         assertEquals(atuendo.tieneCategoriaValida(sueter) , true);
 
     }
-    
+
    @Test
     public void testTipoPrendaNoValida(){
 
