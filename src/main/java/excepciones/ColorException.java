@@ -1,4 +1,4 @@
-package main.java.utiles;
+package excepciones;
 
 
 public class ColorException extends RuntimeException {

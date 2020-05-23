@@ -1,10 +1,9 @@
-package main.java.atuendo;
+package atuendo;
 
-import main.java.prenda.Categoria;
-import main.java.prenda.Color;
-import main.java.prenda.Material;
-import main.java.prenda.Prenda;
-import main.java.utiles.CategoriaException;
+
+import prenda.*;
+
+import excepciones.*; 
 
 import java.util.ArrayList;
 import java.util.HashMap;

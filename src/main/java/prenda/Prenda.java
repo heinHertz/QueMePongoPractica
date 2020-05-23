@@ -1,9 +1,6 @@
-package main.java.prenda;
+package prenda;
 
-import main.java.utiles.CategoriaException;
-import main.java.utiles.ColorException;
-import main.java.utiles.MaterialException;
-import main.java.utiles.TipoPrendaException;
+import excepciones.*;
 
 import java.util.Objects;
 

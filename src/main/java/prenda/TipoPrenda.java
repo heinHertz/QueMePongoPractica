@@ -1,6 +1,6 @@
-package main.java.prenda;
+package prenda;
 
-import main.java.utiles.CategoriaException;
+import excepciones.*;
 
 public class TipoPrenda {
 
