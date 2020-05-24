@@ -6,9 +6,9 @@ import prenda.*;
 import excepciones.*; 
 
 import java.util.ArrayList;
-import java.util.HashMap;
+
 import java.util.List;
-import java.util.Map;
+
 
 public class Atuendo {
 
@@ -16,7 +16,7 @@ public class Atuendo {
 
     public void agregarPrenda( Prenda prendaNueva){
 
-        if(tieneCategoriaValida(prendaNueva))
+        if(esPrendaConCategoriaValida(prendaNueva))
             prendas.add(prendaNueva);
         else
             throw new CategoriaException("Debe ingresar al Atuendo una prenda Cuya Categoria esté Disponible");
@@ -26,7 +26,7 @@ public class Atuendo {
 
     public List<Prenda> getPrendas() {   return prendas;    }
 
-    public boolean tieneCategoriaValida(Prenda prendaNueva ){
+    public boolean esPrendaConCategoriaValida(Prenda prendaNueva ){
 
         return !prendas.stream().anyMatch( p -> p.getCategoria().equals(prendaNueva.getCategoria()) );
 
@@ -34,7 +34,9 @@ public class Atuendo {
 
     public boolean tieneTodasLasCategorias(){
 
-        if( this.cantidadCategorias() == 4 ) return true; else return  false;
+      //  if( this.cantidadCategorias() == 4 ) return true; else return  false;
+        
+        return (this.cantidadCategorias() == 4);
 
     }
 

@@ -33,24 +33,29 @@ public class Prenda {
     }
 
     public void setTipoPrenda(TipoPrenda tipoPrenda, Categoria categoria) {
+    	    	
         if(!tipoPrenda.getCategoria().equals(categoria))
             throw new TipoPrendaException( "Las Prendas deben Corresponder Con su Tipo De Prenda. (Ej, una remera no puede ser calzado)");
         else
             this.tipoPrenda = tipoPrenda;
+        
+        
     }
 
     public void setCategoria(Categoria categoria) {
-        if(categoria.equals(null))
-            throw new CategoriaException("Categoria NUll, debe asignar Una Categoria correcta");
-       else
-           this.categoria = categoria;
+//        if(categoria.equals(null))
+//            throw new CategoriaException("Categoria NUll, debe asignar Una Categoria correcta");
+//       else
+//           this.categoria = categoria;
+    	  this.categoria = Objects.requireNonNull(categoria, "bar must not be null");
     }
 
     public void setMaterial(Material material ) {
-        if(material.equals(null) )
-            throw new MaterialException("Material NUll, debe asignar Un Material Correcto");
-        else
-            this.material = material;
+//        if(material.equals(null) )
+//            throw new MaterialException("Material NUll, debe asignar Un Material Correcto");
+//        else
+//            this.material = material;
+    	  this.material = Objects.requireNonNull(material, "bar must not be null");
     }
 
 

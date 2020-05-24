@@ -1,16 +1,16 @@
 package prenda;
 
-import excepciones.*;
+import java.util.Objects;
+
 
 public class TipoPrenda {
 
     Categoria categoria;
 
-    String nombrePrenda;
 
-    public TipoPrenda(String nombrePrenda , Categoria categoria){
+    public TipoPrenda( Categoria categoria){
 
-        this.nombrePrenda = nombrePrenda;
+      
 
         this.setCategoria(categoria);
 
@@ -20,13 +20,11 @@ public class TipoPrenda {
         return categoria;
     }
 
-    public String getNombrePrenda(){ return nombrePrenda; }
+ //   public String getNombrePrenda(){ return nombrePrenda; }
 
     public void setCategoria(Categoria categoria) {
-        if(categoria.equals(null))
-            throw new CategoriaException("Categoria NUll, debe asignar Una Categoria correcta");
-        else
-            this.categoria = categoria;
+     
+        this.categoria = Objects.requireNonNull(categoria, "no debe Ingresar Categoria Nula");
     }
 
 
